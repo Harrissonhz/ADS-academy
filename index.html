@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADS Academy - Plataforma Educativa</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-graduation-cap me-2"></i>ADS Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html"><i class="fas fa-book me-1"></i> Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://harrissonhz.github.io/ADSstore/"><i class="fas fa-store me-1"></i> Tienda</a>
+                    </li>
+                </ul>
+                <div class="user-profile">
+                    <a href="login.html" class="text-decoration-none text-white d-flex align-items-center">
+                        <div class="user-avatar me-2">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <span>Mi cuenta</span>
+                    </a>
+                    <a href="login.html" class="logout-btn">
+                        <i class="fas fa-sign-out-alt me-1"></i>Salir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-content">
+                    <h1 class="display-4 fw-bold">Bienvenido a ADS Academy</h1>
+                    <p class="lead">Tu plataforma educativa virtual para el aprendizaje continuo</p>
+                    <button class="btn btn-light btn-lg">
+                        <i class="fas fa-play me-2"></i>Continuar Aprendiendo
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/Educacion.jpg" alt="Educación Virtual" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <a href="login.html" class="text-decoration-none">
+                    <div class="card feature-card">
+                        <i class="fas fa-video card-icon"></i>
+                        <h3>Clases en Vivo</h3>
+                        <p>Participa en clases interactivas con profesores expertos en tiempo real.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="login.html" class="text-decoration-none">
+                    <div class="card feature-card">
+                        <i class="fas fa-book-open card-icon"></i>
+                        <h3>Material de Estudio</h3>
+                        <p>Accede a recursos educativos y materiales de estudio actualizados.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="login.html" class="text-decoration-none">
+                    <div class="card feature-card">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <h3>Seguimiento de Progreso</h3>
+                        <p>Monitorea tu avance y desempeño.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos Destacados -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4">Cursos Destacados</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/LogicaProgramacion.jpg" class="card-img-top" alt="Curso 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Lógica de Programación</h5>
+                        <p class="card-text">Aprende a resolver problemas mediante el pensamiento lógico y estructuras básicas para iniciar tu camino en el desarrollo de software.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">Popular</span>
+                            <a href="login.html?redirect=curso-logica.html" class="btn btn-outline-primary">Iniciar Curso</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/JavaScript.jpg" class="card-img-top" alt="Curso 2">
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript desde Cero</h5>
+                        <p class="card-text">Domina JavaScript, donde aprenderás a crear páginas web interactivas usando el lenguaje más popular para el desarrollo frontend del mundo.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">Popular</span>
+                            <a href="login.html?redirect=curso-javascript.html&curso=javascript" class="btn btn-outline-primary">Iniciar Curso</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/SQL.jpg" class="card-img-top" alt="Curso 3">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL de Cero a Experto</h5>
+                        <p class="card-text">Aprende SQL desde cero, domina conceptos básicos hasta consultas avanzadas para gestionar bases de datos de forma eficiente y profesional.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning">Nuevo</span>
+                            <a href="login.html?curso=sql" class="btn btn-outline-primary">Iniciar Curso</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ADS Academy</h5>
+                    <p>Plataforma educativa virtual para el aprendizaje continuo y desarrollo profesional.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                        <li><a href="#" class="text-white">Contacto</a></li>
+                        <li><a href="#" class="text-white">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>info@adsacademy.com</li>
+                        <li><i class="fas fa-phone me-2"></i>+57 305 248 7883</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Medellín, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573052487883?text=Hola%20ADS%20estoy%20interesado%20en%20los%20cursos%20virtuales" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html> 

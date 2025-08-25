@@ -1,0 +1,1098 @@
+<!-- Estructura básica del documento HTML -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logica de Programacion - ADS Academy</title>
+    
+    <!-- Enlaces a hojas de estilo externas -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/curso-logica.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <!-- Logo y nombre de la academia -->
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>ADS Academy
+            </a>
+            
+            <!-- Botón para mostrar/ocultar menú en dispositivos móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú de navegación principal -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cursos.html"><i class="fas fa-book me-1"></i> Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://harrissonhz.github.io/ADSstore/"><i class="fas fa-store me-1"></i> Tienda</a>
+                    </li>
+                </ul>
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user text-primary"></i>
+                    </div>
+                    <span class="text-white" id="userName">Mi cuenta</span>
+                    <a href="login.html" class="logout-btn">
+                        <i class="fas fa-sign-out-alt me-1"></i>Salir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado del curso -->
+    <section class="course-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Información principal del curso -->
+                <div class="col-md-8">JavaScript
+                    <h1 class="display-4 fw-bold">Logica de programacion HZ</h1>
+                    <p class="lead">Aprende a programar en JavaScript y desarrolla aplicaciones web interactivas.</p>
+                    <!-- Barra de progreso del curso -->
+                    <div class="d-flex align-items-center">
+                        <div class="progress-bar w-50 me-3">
+                            <div class="progress-bar-fill" style="width: 25%"></div>
+                        </div>
+                        <span>25% Completado</span>
+                    </div>
+                </div>
+                <!-- Botón para continuar el curso -->
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-light btn-lg">
+                        <i class="fas fa-play me-2"></i>Continuar Curso
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Content -->
+    <section class="container">
+        <div class="row">
+            <!-- Menú lateral con el contenido del curso -->
+            <div class="col-md-4">
+                <div class="course-sidebar">
+                    <h4 class="mb-4">Contenido del Curso</h4>
+                    
+                    <!-- Módulo 1: Introducción -->
+                    <div class="module-item active">
+                        <i class="fas fa-play-circle me-2"></i>Módulo 1: Introducción a la Lógica de Programación
+                        <div class="module-content">
+                            <!-- Lista de lecciones del módulo 1 -->
+                            <ul class="list-unstyled ms-4 mt-2">
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('videoIntroductorio')">Video introductorio</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('logicaProgramacion')">¿Qué es la lógica de programación?</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('pensamientoAlgoritmico')">Pensamiento algorítmico</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('lenguajesVsLogica')">Lenguajes de programación vs lógica</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('herramientasCurso')">Herramientas del curso</a></li>
+                            </ul>
+                            <div class="ms-4 mt-2">
+                                <a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('quizModulo1')"><i class="fas fa-question-circle me-2 text-warning"></i>Quiz del Módulo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <i class="fas fa-play-circle me-2"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('definicionAlgoritmo')">Módulo 2: Algoritmos y Pseudocódigo</a>
+                        <div class="module-content">
+                            <!-- Lista de lecciones del módulo 2 -->
+                            <ul class="list-unstyled ms-4 mt-2">
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('definicionAlgoritmo')">Definición de algoritmo</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('pseudocodigoBasico')">Pseudocódigo básico</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('ejemplosCotidianos')">Ejemplos cotidianos</a></li>
+                                <li><i class="fas fa-tasks me-2 text-warning"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('actividadAlgoritmo')">Actividad: Algoritmo cotidiano</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <i class="fas fa-play-circle me-2"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('simbolosNormas')">Módulo 3: Diagramas de Flujo</a>
+                        <div class="module-content">
+                            <!-- Lista de lecciones del módulo 3 -->
+                            <ul class="list-unstyled ms-4 mt-2">
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('simbolosNormas')">Símbolos y normas básicas</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('conversionPseudocodigo')">Conversión pseudocódigo ↔ diagrama</a></li>
+                                <li><i class="fas fa-tasks me-2 text-warning"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('actividadDrawio')">Actividad: Diagrama en draw.io</a></li>
+                            </ul>
+                            <div class="ms-4 mt-2">
+                                <a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('quizModulo3')"><i class="fas fa-question-circle me-2 text-warning"></i>Quiz del Módulo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <i class="fas fa-play-circle me-2"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('tiposDatosBasicos')">Módulo 4: Tipos de Datos y Variables</a>
+                        <div class="module-content">
+                            <!-- Lista de lecciones del módulo 4 -->
+                            <ul class="list-unstyled ms-4 mt-2">
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('tiposDatosBasicos')">Tipos de datos básicos</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('declaracionInicializacion')">Declaración e inicialización</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('entradaSalidaDatos')">Entrada/salida de datos</a></li>
+                                <li><i class="fas fa-tasks me-2 text-warning"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('actividadQuizPseint')">Actividad: Quiz + PSeInt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <i class="fas fa-play-circle me-2"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('operadoresAritmeticos')">Módulo 5: Operadores y Expresiones</a>
+                        <div class="module-content">
+                            <!-- Lista de lecciones del módulo 5 -->
+                            <ul class="list-unstyled ms-4 mt-2">
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('operadoresAritmeticos')">Operadores aritméticos y lógicos</a></li>
+                                <li><i class="fas fa-video me-2 text-primary"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('precedenciaOperadores')">Precedencia de operadores</a></li>
+                                <li><i class="fas fa-tasks me-2 text-warning"></i><a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('actividadEjerciciosCombinados')">Actividad: Ejercicios combinados</a></li>
+                            </ul>
+                            <div class="ms-4 mt-2">
+                                <a href="#" class="text-decoration-none text-dark" onclick="mostrarContenido('quizModulo5')"><i class="fas fa-question-circle me-2 text-warning"></i>Quiz del Módulo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-8">
+                <!-- Contenido Dinámico -->
+                <div class="lesson-content" id="videoIntroductorio">
+                    <!-- Sección 1: Video y Contenido Principal -->
+                    <div class="video-section">
+                        <h2>Introducción a la Programación</h2>
+                        <div class="video-container" style="position: relative; width: 100%; height: 400px; overflow: hidden;">
+                            <div id="videoThumbnailIntro" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background-image: url('https://img.youtube.com/vi/hMbcVsM5Nug/maxresdefault.jpg'); background-size: cover; background-position: center;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <i class="fas fa-play-circle" style="font-size: 64px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="videoPlayerIntro"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;"
+                                src="about:blank" 
+                                title="Introducción a la Programación" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <script>
+                            document.getElementById('videoThumbnailIntro').addEventListener('click', function() {
+                                this.style.display = 'none';
+                                var iframe = document.getElementById('videoPlayerIntro');
+                                iframe.style.display = 'block';
+                                iframe.src = 'https://www.youtube.com/embed/hMbcVsM5Nug?autoplay=1&enablejsapi=1&origin=' + window.location.origin;
+                            });
+                        </script>
+                        <h4>Descripción</h4>
+                        <p>En esta lección aprenderás los conceptos fundamentales de la programación y cómo desarrollar tu pensamiento lógico para resolver problemas.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sección 2: Recursos Adicionales -->
+                    <div class="resources-section mt-5">
+                        <h4 class="mt-4">Recursos Adicionales</h4>
+                        <div class="resources-list">
+                            <div class="resource-item">
+                                <div class="resource-header" data-bs-toggle="collapse" data-bs-target="#guiaEstudio">
+                                    <i class="fas fa-file-pdf me-2"></i>Guía de Estudio
+                                    <i class="fas fa-chevron-down float-end"></i>
+                                </div>
+                                <div class="collapse" id="guiaEstudio">
+                                    <div class="resource-content p-3">
+                                        <a href="#" class="btn btn-outline-primary btn-sm mb-2" onclick="descargarArchivo('recursos/LogicaProgramacion/HojaRutaLogicaProgramación.jpg', 'HojaRutaLogicaProgramacion.jpg')">
+                                            <i class="fas fa-download me-2"></i>Descargar Hoja de Ruta
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="resource-item">
+                                <div class="resource-header" data-bs-toggle="collapse" data-bs-target="#ejemplosCodigo">
+                                    <i class="fas fa-file-code me-2"></i>Ejemplos de Código
+                                    <i class="fas fa-chevron-down float-end"></i>
+                                </div>
+                                <div class="collapse" id="ejemplosCodigo">
+                                    <div class="resource-content p-3">
+                                        <div class="mb-2">
+                                            <a href="#" class="btn btn-outline-primary btn-sm" onclick="descargarArchivo('recursos/LogicaProgramacion/ejemplo1.txt', 'ejemplo1.txt')">
+                                                <i class="fas fa-download me-2"></i>Ejemplo 1 - Variables
+                                            </a>
+                                        </div>
+                                        <div class="mb-2">
+                                            <a href="#" class="btn btn-outline-primary btn-sm" onclick="descargarArchivo('recursos/LogicaProgramacion/ejemplo2.txt', 'ejemplo2.txt')">
+                                                <i class="fas fa-download me-2"></i>Ejemplo 2 - Condicionales
+                                            </a>
+                                        </div>
+                                        <div class="mb-2">
+                                            <a href="#" class="btn btn-outline-primary btn-sm" onclick="descargarArchivo('recursos/LogicaProgramacion/ejemplo3.txt', 'ejemplo3.txt')">
+                                                <i class="fas fa-download me-2"></i>Ejemplo 3 - Bucles
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="resource-item">
+                                <div class="resource-header" data-bs-toggle="collapse" data-bs-target="#enlacesReferencia">
+                                    <i class="fas fa-link me-2"></i>Enlaces de Referencia
+                                    <i class="fas fa-chevron-down float-end"></i>
+                                </div>
+                                <div class="collapse" id="enlacesReferencia">
+                                    <div class="resource-content p-3">
+                                        <div class="mb-2">
+                                            <a href="https://www.programaenlinea.net/logica-de-programacion-el-primer-paso-para-aprender-a-programar/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-external-link-alt me-2"></i>Curso de Lógica de Programación
+                                            </a>
+                                        </div>
+                                        <div class="mb-2">
+                                            <a href="https://tripleten.mx/blog/algoritmos-y-logica-de-programacion/" target="_blank" class="btn btn-outline-primary btn-sm">
+                                                <i class="fas fa-external-link-alt me-2"></i>Introducción a la Lógica de Programación
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz del Módulo 1 -->
+                <div class="lesson-content" id="quizModulo1" style="display: none;">
+                    <div class="quiz-section">
+                        <div class="quiz-image mb-4">
+                            <img src="img/Quiz.jpg" alt="Quiz" class="img-fluid rounded">
+                        </div>
+                        <div class="quiz-instructions mb-4">
+                            <p class="lead text-center">
+                                <i class="fas fa-info-circle me-2 text-primary"></i>
+                                Este quiz consta de 5 preguntas de opción múltiple. Selecciona la respuesta que consideres correcta para cada pregunta. 
+                                Al finalizar, haz clic en "Enviar Respuestas" para verificar tus resultados. 
+                                ¡Buena suerte!
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                        <div class="quiz-header" data-bs-toggle="collapse" data-bs-target="#quizContenido" role="button" aria-expanded="false" aria-controls="quizContenido">
+                            <h2 class="mb-0">
+                                <i class="fas fa-chevron-down me-2"></i>
+                                Quiz del Módulo 1: Introducción a la Lógica de Programación
+                            </h2>
+                        </div>
+                        <div class="collapse" id="quizContenido">
+                            <div class="quiz-container mt-3">
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">1. ¿Qué es un algoritmo?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Un lenguaje de programación</li>
+                                        <li class="quiz-option" data-correct="true">Un conjunto de instrucciones para resolver un problema</li>
+                                        <li class="quiz-option" data-correct="false">Un tipo de variable</li>
+                                        <li class="quiz-option" data-correct="false">Un error en el código</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">2. ¿Cuál es la diferencia entre pseudocódigo y un lenguaje de programación?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">El pseudocódigo es más difícil de entender</li>
+                                        <li class="quiz-option" data-correct="true">El pseudocódigo es independiente de cualquier lenguaje de programación</li>
+                                        <li class="quiz-option" data-correct="false">El pseudocódigo no puede ser ejecutado</li>
+                                        <li class="quiz-option" data-correct="false">El pseudocódigo es más rápido de escribir</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">3. ¿Qué es un diagrama de flujo?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Un tipo de código fuente</li>
+                                        <li class="quiz-option" data-correct="true">Una representación gráfica de un algoritmo</li>
+                                        <li class="quiz-option" data-correct="false">Un lenguaje de programación visual</li>
+                                        <li class="quiz-option" data-correct="false">Un error en el programa</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">4. ¿Cuál es el propósito principal de las estructuras condicionales?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Solo para realizar cálculos matemáticos</li>
+                                        <li class="quiz-option" data-correct="true">Permitir que el programa tome decisiones basadas en condiciones</li>
+                                        <li class="quiz-option" data-correct="false">Solo para mostrar mensajes al usuario</li>
+                                        <li class="quiz-option" data-correct="false">Solo para almacenar datos</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">5. ¿Qué son las estructuras repetitivas?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Solo para declarar variables</li>
+                                        <li class="quiz-option" data-correct="true">Mecanismos que permiten ejecutar un bloque de código múltiples veces</li>
+                                        <li class="quiz-option" data-correct="false">Solo para mostrar errores</li>
+                                        <li class="quiz-option" data-correct="false">Solo para realizar operaciones matemáticas</li>
+                                    </ul>
+                                </div>
+
+                                <div class="text-center">
+                                    <button class="btn btn-primary" onclick="verificarRespuestas()">Enviar Respuestas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz del Módulo 3 -->
+                <div class="lesson-content" id="quizModulo3" style="display: none;">
+                    <div class="quiz-section">
+                        <div class="quiz-image mb-4">
+                            <img src="img/Quiz.jpg" alt="Quiz" class="img-fluid rounded">
+                        </div>
+                        <div class="quiz-instructions mb-4">
+                            <p class="lead text-center">
+                                <i class="fas fa-info-circle me-2 text-primary"></i>
+                                Este quiz consta de 5 preguntas de opción múltiple. Selecciona la respuesta que consideres correcta para cada pregunta. 
+                                Al finalizar, haz clic en "Enviar Respuestas" para verificar tus resultados. 
+                                ¡Buena suerte!
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                        <div class="quiz-header" data-bs-toggle="collapse" data-bs-target="#quizContenido3" role="button" aria-expanded="false" aria-controls="quizContenido3">
+                            <h2 class="mb-0">
+                                <i class="fas fa-chevron-down me-2"></i>
+                                Quiz del Módulo 3: Diagramas de Flujo
+                            </h2>
+                        </div>
+                        <div class="collapse" id="quizContenido3">
+                            <div class="quiz-container mt-3">
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">1. ¿Cuál es el símbolo correcto para representar una decisión en un diagrama de flujo?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Un rectángulo</li>
+                                        <li class="quiz-option" data-correct="true">Un rombo</li>
+                                        <li class="quiz-option" data-correct="false">Un círculo</li>
+                                        <li class="quiz-option" data-correct="false">Un triángulo</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">2. ¿Qué representa el símbolo de flecha en un diagrama de flujo?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Una pausa en el proceso</li>
+                                        <li class="quiz-option" data-correct="true">La dirección del flujo del proceso</li>
+                                        <li class="quiz-option" data-correct="false">Un error en el programa</li>
+                                        <li class="quiz-option" data-correct="false">Una variable</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">3. ¿Cuál es el símbolo correcto para representar el inicio y fin de un diagrama de flujo?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Un rectángulo con bordes redondeados</li>
+                                        <li class="quiz-option" data-correct="true">Un óvalo</li>
+                                        <li class="quiz-option" data-correct="false">Un rombo</li>
+                                        <li class="quiz-option" data-correct="false">Un círculo</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">4. ¿Qué representa el símbolo de rectángulo en un diagrama de flujo?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Una decisión</li>
+                                        <li class="quiz-option" data-correct="true">Un proceso o acción</li>
+                                        <li class="quiz-option" data-correct="false">Una entrada de datos</li>
+                                        <li class="quiz-option" data-correct="false">Una salida de datos</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">5. ¿Cuál es el símbolo correcto para representar una entrada o salida de datos?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Un rombo</li>
+                                        <li class="quiz-option" data-correct="true">Un paralelogramo</li>
+                                        <li class="quiz-option" data-correct="false">Un rectángulo</li>
+                                        <li class="quiz-option" data-correct="false">Un círculo</li>
+                                    </ul>
+                                </div>
+
+                                <div class="text-center">
+                                    <button class="btn btn-primary" onclick="verificarRespuestas()">Enviar Respuestas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz del Módulo 5 -->
+                <div class="lesson-content" id="quizModulo5" style="display: none;">
+                    <div class="quiz-section">
+                        <div class="quiz-image mb-4">
+                            <img src="img/Quiz.jpg" alt="Quiz" class="img-fluid rounded">
+                        </div>
+                        <div class="quiz-instructions mb-4">
+                            <p class="lead text-center">
+                                <i class="fas fa-info-circle me-2 text-primary"></i>
+                                Este quiz consta de 5 preguntas de opción múltiple. Selecciona la respuesta que consideres correcta para cada pregunta. 
+                                Al finalizar, haz clic en "Enviar Respuestas" para verificar tus resultados. 
+                                ¡Buena suerte!
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-center gap-3 mb-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                        <div class="quiz-header" data-bs-toggle="collapse" data-bs-target="#quizContenido5" role="button" aria-expanded="false" aria-controls="quizContenido5">
+                            <h2 class="mb-0">
+                                <i class="fas fa-chevron-down me-2"></i>
+                                Quiz del Módulo 5: Operadores y Expresiones
+                            </h2>
+                        </div>
+                        <div class="collapse" id="quizContenido5">
+                            <div class="quiz-container mt-3">
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">1. ¿Cuál es el resultado de la expresión: 5 + 3 * 2?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">16</li>
+                                        <li class="quiz-option" data-correct="true">11</li>
+                                        <li class="quiz-option" data-correct="false">13</li>
+                                        <li class="quiz-option" data-correct="false">10</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">2. ¿Qué operador se utiliza para obtener el residuo de una división?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">/</li>
+                                        <li class="quiz-option" data-correct="true">%</li>
+                                        <li class="quiz-option" data-correct="false">//</li>
+                                        <li class="quiz-option" data-correct="false">\</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">3. ¿Cuál es el resultado de la expresión lógica: (5 > 3) && (2 < 4)?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">false</li>
+                                        <li class="quiz-option" data-correct="true">true</li>
+                                        <li class="quiz-option" data-correct="false">error</li>
+                                        <li class="quiz-option" data-correct="false">ninguno</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">4. ¿Qué operador se utiliza para incrementar una variable en 1?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">=+</li>
+                                        <li class="quiz-option" data-correct="true">++</li>
+                                        <li class="quiz-option" data-correct="false">+=</li>
+                                        <li class="quiz-option" data-correct="false">+1</li>
+                                    </ul>
+                                </div>
+
+                                <div class="quiz-question mb-4">
+                                    <p class="fw-bold">5. ¿Cuál es la precedencia correcta de los operadores aritméticos?</p>
+                                    <ul class="quiz-options">
+                                        <li class="quiz-option" data-correct="false">Suma, Resta, Multiplicación, División</li>
+                                        <li class="quiz-option" data-correct="true">Paréntesis, Multiplicación/División, Suma/Resta</li>
+                                        <li class="quiz-option" data-correct="false">Multiplicación, División, Suma, Resta</li>
+                                        <li class="quiz-option" data-correct="false">Suma, Multiplicación, División, Resta</li>
+                                    </ul>
+                                </div>
+
+                                <div class="text-center">
+                                    <button class="btn btn-primary" onclick="verificarRespuestas()">Enviar Respuestas</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="logicaProgramacion" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>¿Qué es la Lógica de Programación?</h2>
+                        <div class="video-container" style="position: relative; width: 100%; height: 500px; overflow: hidden;">
+                            <div id="videoThumbnail" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background-image: url('https://img.youtube.com/vi/3GymExBkKjE/maxresdefault.jpg'); background-size: cover; background-position: center;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <i class="fas fa-play-circle" style="font-size: 64px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="videoPlayer"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;"
+                                src="about:blank" 
+                                title="Lógica de Programación" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <script>
+                            document.getElementById('videoThumbnail').addEventListener('click', function() {
+                                this.style.display = 'none';
+                                var iframe = document.getElementById('videoPlayer');
+                                iframe.style.display = 'block';
+                                iframe.src = 'https://www.youtube.com/embed/3GymExBkKjE?autoplay=1';
+                            });
+                        </script>
+                        <h4>Descripción</h4>
+                        <p>Explora los fundamentos de la lógica de programación, su importancia en el desarrollo de software y cómo aplicarla en la resolución de problemas.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="pensamientoAlgoritmico" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Pensamiento Algorítmico</h2>
+                        <div class="video-container" style="position: relative; width: 100%; height: 500px; overflow: hidden;">
+                            <div id="videoThumbnailAlgoritmico" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background-image: url('https://img.youtube.com/vi/6hfOvs8pY1k/maxresdefault.jpg'); background-size: cover; background-position: center;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <i class="fas fa-play-circle" style="font-size: 64px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="videoPlayerAlgoritmico"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;"
+                                src="about:blank" 
+                                title="Pensamiento Algorítmico" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <script>
+                            document.getElementById('videoThumbnailAlgoritmico').addEventListener('click', function() {
+                                this.style.display = 'none';
+                                var iframe = document.getElementById('videoPlayerAlgoritmico');
+                                iframe.style.display = 'block';
+                                iframe.src = 'https://www.youtube.com/embed/6hfOvs8pY1k?autoplay=1';
+                            });
+                        </script>
+                        <h4>Descripción</h4>
+                        <p>Aprende a desarrollar el pensamiento algorítmico, una habilidad fundamental para resolver problemas de manera estructurada y eficiente.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="lenguajesVsLogica" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Lenguajes de Programación vs Lógica</h2>
+                        <div class="video-container" style="position: relative; width: 100%; height: 500px; overflow: hidden;">
+                            <div id="videoThumbnailLenguajes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background-image: url('https://img.youtube.com/vi/7TycxwFndBk/maxresdefault.jpg'); background-size: cover; background-position: center;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <i class="fas fa-play-circle" style="font-size: 64px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="videoPlayerLenguajes"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;"
+                                src="about:blank" 
+                                title="Lenguajes vs Lógica" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <script>
+                            document.getElementById('videoThumbnailLenguajes').addEventListener('click', function() {
+                                this.style.display = 'none';
+                                var iframe = document.getElementById('videoPlayerLenguajes');
+                                iframe.style.display = 'block';
+                                iframe.src = 'https://www.youtube.com/embed/7TycxwFndBk?autoplay=1';
+                            });
+                        </script>
+                        <h4>Descripción</h4>
+                        <p>Descubre la diferencia entre la lógica de programación y los lenguajes de programación, y cómo se complementan en el desarrollo de software.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="herramientasCurso" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Herramientas del Curso</h2>
+                        <div class="video-container" style="position: relative; width: 100%; height: 500px; overflow: hidden;">
+                            <div id="videoThumbnailHerramientas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; background-image: url('https://img.youtube.com/vi/8mK5aY5YOC4/maxresdefault.jpg'); background-size: cover; background-position: center;">
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <i class="fas fa-play-circle" style="font-size: 64px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></i>
+                                </div>
+                            </div>
+                            <iframe 
+                                id="videoPlayerHerramientas"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;"
+                                src="about:blank" 
+                                title="Herramientas del Curso" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <script>
+                            document.getElementById('videoThumbnailHerramientas').addEventListener('click', function() {
+                                this.style.display = 'none';
+                                var iframe = document.getElementById('videoPlayerHerramientas');
+                                iframe.style.display = 'block';
+                                iframe.src = 'https://www.youtube.com/embed/8mK5aY5YOC4?autoplay=1';
+                            });
+                        </script>
+                        <h4>Descripción</h4>
+                        <p>Conoce las herramientas y recursos que utilizaremos durante el curso para practicar y aplicar los conceptos de programación.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="definicionAlgoritmo" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Definición de Algoritmo</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example1" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example1/maxresdefault.jpg" alt="Definición de Algoritmo" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>En esta lección aprenderás qué es un algoritmo, sus características fundamentales y su importancia en la programación.</p>
+                        <p>Un algoritmo es un conjunto de instrucciones o reglas definidas, ordenadas y finitas que permite llevar a cabo una actividad mediante pasos sucesivos que no generen dudas a quien deba realizar dicha actividad.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="pseudocodigoBasico" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Pseudocódigo Básico</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example2" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example2/maxresdefault.jpg" alt="Pseudocódigo Básico" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Aprende a escribir pseudocódigo, una herramienta fundamental para planificar y estructurar tus programas antes de implementarlos.</p>
+                        <p>El pseudocódigo es una forma de escribir algoritmos que se asemeja al lenguaje natural, pero con una estructura más formal y cercana a la programación. Es independiente de cualquier lenguaje de programación específico.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="ejemplosCotidianos" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Ejemplos Cotidianos de Algoritmos</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example3" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example3/maxresdefault.jpg" alt="Ejemplos Cotidianos" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Descubre cómo los algoritmos están presentes en nuestra vida diaria y cómo podemos identificarlos en situaciones cotidianas.</p>
+                        <p>Desde preparar una taza de café hasta seguir una receta de cocina, muchos de nuestros actos cotidianos pueden ser descritos como algoritmos. Identificar estos patrones nos ayuda a desarrollar nuestro pensamiento algorítmico.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="actividadAlgoritmo" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Actividad: Algoritmo Cotidiano</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example4" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example4/maxresdefault.jpg" alt="Actividad Algoritmo" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Realiza esta actividad práctica donde deberás identificar y describir un algoritmo de tu vida cotidiana.</p>
+                        <p>Para esta actividad, deberás elegir una tarea cotidiana, descomponerla en pasos claros y secuenciales, y presentarla en formato de pseudocódigo. Esto te ayudará a practicar la identificación de patrones y la estructuración de procesos.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="simbolosNormas" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Símbolos y Normas Básicas</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example5" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example5/maxresdefault.jpg" alt="Símbolos y Normas" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Aprende los símbolos fundamentales utilizados en los diagramas de flujo y las normas básicas para su correcta implementación.</p>
+                        <p>Los diagramas de flujo utilizan símbolos estandarizados para representar diferentes tipos de operaciones y decisiones. Conocer estos símbolos y sus reglas de uso es esencial para crear diagramas claros y efectivos.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="conversionPseudocodigo" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Conversión Pseudocódigo ↔ Diagrama</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example6" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example6/maxresdefault.jpg" alt="Conversión Pseudocódigo" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Descubre cómo convertir algoritmos entre pseudocódigo y diagramas de flujo, y cuándo es más apropiado usar cada uno.</p>
+                        <p>La conversión entre estas dos representaciones es una habilidad importante que te permitirá elegir la mejor forma de visualizar y comunicar tus algoritmos según el contexto y la audiencia.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="actividadDrawio" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Actividad: Diagrama en draw.io</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example7" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example7/maxresdefault.jpg" alt="Actividad draw.io" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Practica la creación de diagramas de flujo utilizando la herramienta draw.io.</p>
+                        <p>En esta actividad, aplicarás los conocimientos adquiridos sobre símbolos y normas para crear diagramas de flujo profesionales utilizando draw.io, una herramienta gratuita y versátil para la creación de diagramas.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="tiposDatosBasicos" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Tipos de Datos Básicos</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example8" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example8/maxresdefault.jpg" alt="Tipos de Datos" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Conoce los tipos de datos fundamentales en programación y cómo se utilizan en diferentes contextos.</p>
+                        <p>Los tipos de datos son la base para almacenar y manipular información en un programa. Entender sus características y limitaciones es esencial para escribir código eficiente y sin errores.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="declaracionInicializacion" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Declaración e Inicialización</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example9" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example9/maxresdefault.jpg" alt="Declaración e Inicialización" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Aprende cómo declarar e inicializar variables correctamente en tus programas.</p>
+                        <p>La declaración e inicialización de variables es un paso fundamental en la programación. Aprenderás las mejores prácticas y cómo evitar errores comunes al trabajar con variables.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="entradaSalidaDatos" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Entrada/Salida de Datos</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example10" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example10/maxresdefault.jpg" alt="Entrada/Salida de Datos" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Descubre cómo interactuar con el usuario mediante la entrada y salida de datos.</p>
+                        <p>La comunicación con el usuario es esencial en la mayoría de los programas. Aprenderás las diferentes formas de recibir datos del usuario y mostrar resultados de manera efectiva.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="actividadQuizPseint" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Actividad: Quiz + PSeInt</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example11" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example11/maxresdefault.jpg" alt="Actividad PSeInt" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Pon en práctica tus conocimientos sobre tipos de datos y variables utilizando PSeInt.</p>
+                        <p>En esta actividad, aplicarás los conceptos aprendidos sobre tipos de datos, declaración de variables y entrada/salida de datos utilizando el entorno PSeInt para crear programas funcionales.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 5: Operadores y Expresiones -->
+                <div class="lesson-content" id="operadoresAritmeticos" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Operadores Aritméticos y Lógicos</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example12" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example12/maxresdefault.jpg" alt="Operadores Aritméticos" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Aprende a utilizar operadores aritméticos y lógicos en tus programas.</p>
+                        <p>Los operadores son fundamentales para realizar cálculos y tomar decisiones en programación. Dominar su uso te permitirá crear programas más complejos y eficientes.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="precedenciaOperadores" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Precedencia de Operadores</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example13" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example13/maxresdefault.jpg" alt="Precedencia de Operadores" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Comprende el orden en que se evalúan los operadores en una expresión.</p>
+                        <p>La precedencia de operadores determina el orden en que se realizan las operaciones en una expresión. Conocer estas reglas es crucial para escribir expresiones correctas y predecibles.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content" id="actividadEjerciciosCombinados" style="display: none;">
+                    <div id="contenidoPrincipal">
+                        <h2>Actividad: Ejercicios Combinados</h2>
+                        <div class="video-container">
+                            <a href="https://www.youtube.com/watch?v=example14" target="_blank" class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/example14/maxresdefault.jpg" alt="Ejercicios Combinados" class="img-fluid">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <h4>Descripción</h4>
+                        <p>Practica el uso de operadores en ejercicios combinados.</p>
+                        <p>En esta actividad, resolverás problemas que combinan diferentes tipos de operadores, poniendo a prueba tu comprensión de la precedencia y el uso correcto de los operadores.</p>
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-primary px-4" style="width: auto;" onclick="navegarLeccion('anterior')">
+                                <i class="fas fa-arrow-left me-2"></i>Anterior
+                            </button>
+                            <button class="btn btn-primary px-4" style="width: auto;" onclick="navegarLeccion('siguiente')">
+                                Siguiente<i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ADS Academy</h5>
+                    <p>Plataforma educativa virtual para el aprendizaje continuo y desarrollo profesional.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                        <li><a href="#" class="text-white">Contacto</a></li>
+                        <li><a href="#" class="text-white">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>info@adsacademy.com</li>
+                        <li><i class="fas fa-phone me-2"></i>+57 305 248 7883</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Medellín, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/curso-logica.js"></script>
+    <script>
+        // Verificación del estado de inicio de sesión del usuario
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const userName = localStorage.getItem('userName');
+        
+        if (isLoggedIn === 'true' && userName) {
+            document.getElementById('userName').textContent = userName;
+        }
+    </script>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573052487883?text=Hola%20ADS%20estoy%20interesado%20en%20los%20cursos%20virtuales" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html> 

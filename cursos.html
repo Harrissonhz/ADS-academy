@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADS Academy - Cursos Disponibles</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>ADS Academy
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-book me-1"></i> Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://harrissonhz.github.io/ADSstore/"><i class="fas fa-store me-1"></i> Tienda</a>
+                    </li>
+                </ul>
+                <div class="user-profile">
+                    <a href="login.html" class="text-decoration-none text-white d-flex align-items-center">
+                        <div class="user-avatar me-2">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <span>Mi cuenta</span>
+                    </a>
+                    <a href="#" class="text-decoration-none text-white d-flex align-items-center ms-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <div class="cart-icon me-2">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="cart-count badge bg-danger rounded-circle">0</span>
+                        </div>
+                        <span>Carrito</span>
+                    </a>
+                    <a href="login.html" class="logout-btn">
+                        <i class="fas fa-sign-out-alt me-1"></i>Salir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems" class="cart-items">
+                        <!-- Los items del carrito se agregarán aquí dinámicamente -->
+                    </div>
+                    <div class="cart-summary mt-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5>Total:</h5>
+                            <h5 id="cartTotal">$0 COP</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" class="btn btn-primary" id="checkoutBtn">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-content">
+                    <h1 class="display-4 fw-bold">Nuestros Cursos</h1>
+                    <p class="lead">Explora nuestra amplia variedad de cursos y comienza tu viaje de aprendizaje</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos Disponibles -->
+    <section class="container mb-5">
+        <div class="row g-4">
+            <!-- Curso 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/LogicaProgramacion.jpg" class="card-img-top" alt="Lógica de Programación">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Lógica de Programación</h5>
+                        <p class="card-text">Aprende a resolver problemas mediante el pensamiento lógico y estructuras básicas para iniciar tu camino en el desarrollo de software.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?redirect=curso-logica.html" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/JavaScript.jpg" class="card-img-top" alt="JavaScript">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">JavaScript desde Cero</h5>
+                        <p class="card-text">Domina JavaScript, donde aprenderás a crear páginas web interactivas usando el lenguaje más popular para el desarrollo frontend del mundo.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?redirect=curso-javascript.html&curso=javascript" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/SQL.jpg" class="card-img-top" alt="SQL">
+                        <span class="badge bg-warning position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">SQL de Cero a Experto</h5>
+                        <p class="card-text">Aprende SQL desde cero, domina conceptos básicos hasta consultas avanzadas para gestionar bases de datos de forma eficiente y profesional.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=sql" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 4 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Python.jpg" class="card-img-top" alt="Python">
+                        <span class="badge bg-info position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Python para Principiantes</h5>
+                        <p class="card-text">Aprende Python desde cero, el lenguaje de programación más versátil y demandado en el mercado actual.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=python" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 5 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/HTML-CSS.jpg" class="card-img-top" alt="HTML y CSS">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">HTML y CSS Moderno</h5>
+                        <p class="card-text">Domina las bases del desarrollo web con HTML5 y CSS3, creando sitios web modernos y responsivos.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=html-css" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 6 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/React.jpg" class="card-img-top" alt="React">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">React.js Avanzado</h5>
+                        <p class="card-text">Aprende a crear aplicaciones web modernas con React.js, la biblioteca más popular de JavaScript.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=react" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 7 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/NoSQL.jpg" class="card-img-top" alt="NoSQL">
+                        <span class="badge bg-info position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">NoSQL de Cero a Experto</h5>
+                        <p class="card-text">Domina las bases de datos NoSQL, aprendiendo MongoDB, Redis y otras tecnologías modernas de almacenamiento de datos.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=nosql" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 8 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/POO.jpg" class="card-img-top" alt="POO">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Programación Orientada a Objetos</h5>
+                        <p class="card-text">Aprende los fundamentos de la POO y cómo aplicarlos en diferentes lenguajes de programación para crear código más organizado y mantenible.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=poo" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 9 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Movil.jpg" class="card-img-top" alt="Desarrollo Móvil">
+                        <span class="badge bg-warning position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Desarrollo para Dispositivos Móviles</h5>
+                        <p class="card-text">Aprende a crear aplicaciones móviles nativas e híbridas para iOS y Android usando las mejores prácticas del mercado.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=movil" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 10 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Git.jpg" class="card-img-top" alt="Git y GitHub">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Git y GitHub para Desarrolladores</h5>
+                        <p class="card-text">Domina el control de versiones con Git y GitHub, herramientas esenciales para el trabajo en equipo en desarrollo de software.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=git" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 11 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Scrum.jpg" class="card-img-top" alt="Scrum">
+                        <span class="badge bg-info position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Scrum en Acción</h5>
+                        <p class="card-text">Aprende a implementar metodologías ágiles con Scrum, mejorando la eficiencia y productividad de tus equipos de desarrollo.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=scrum" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 12 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Frontend.jpg" class="card-img-top" alt="Frontend">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Frontend Web desde Cero</h5>
+                        <p class="card-text">Aprende a crear interfaces web modernas y responsivas usando HTML, CSS y JavaScript desde los fundamentos hasta técnicas avanzadas.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=frontend" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 13 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/API.jpg" class="card-img-top" alt="APIs">
+                        <span class="badge bg-warning position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">APIs RESTful</h5>
+                        <p class="card-text">Aprende a diseñar, desarrollar y consumir APIs RESTful siguiendo las mejores prácticas y estándares de la industria.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=api" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 14 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Flutter.jpg" class="card-img-top" alt="Flutter">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-2">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Flutter</h5>
+                        <p class="card-text">Desarrolla aplicaciones móviles multiplataforma con Flutter, el framework de Google para crear interfaces nativas de alta calidad.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=flutter" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Curso 15 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="position-relative">
+                        <img src="img/Firebase.jpg" class="card-img-top" alt="Firebase">
+                        <span class="badge bg-info position-absolute top-0 start-0 m-2">Nuevo</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Introducción a Firebase</h5>
+                        <p class="card-text">Aprende a utilizar Firebase para añadir funcionalidades backend a tus aplicaciones, incluyendo autenticación, base de datos y almacenamiento.</p>
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">$50.000 COP</h5>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex gap-2">
+                                <a href="login.html?curso=firebase" class="btn btn-outline-primary">Ingresar</a>
+                                <button class="btn btn-primary">Agregar al Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ADS Academy</h5>
+                    <p>Plataforma educativa virtual para el aprendizaje continuo y desarrollo profesional.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                        <li><a href="#" class="text-white">Contacto</a></li>
+                        <li><a href="#" class="text-white">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>info@adsacademy.com</li>
+                        <li><i class="fas fa-phone me-2"></i>+57 305 248 7883</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Medellín, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script de autenticación -->
+    <script src="js/auth.js"></script>
+    <!-- Script del carrito -->
+    <script src="js/cart.js"></script>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/573052487883?text=Hola%20ADS%20estoy%20interesado%20en%20los%20cursos%20virtuales" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html> 
