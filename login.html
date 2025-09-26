@@ -53,39 +53,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Datos de usuarios (incluidos directamente para evitar CORS) -->
-    <script>
-        window.usuariosData = {
-            "usuarios": [
-                {
-                    "id": 1,
-                    "email": "estudiantecensa@gmail.com",
-                    "password": "123456",
-                    "nombre": "Estudiante Censa",
-                    "cursos": ["logica", "javascript", "sql"],
-                    "rol": "estudiante"
-                },
-                {
-                    "id": 2,
-                    "email": "admin@adsacademy.com",
-                    "password": "admin123",
-                    "nombre": "Administrador",
-                    "cursos": ["logica", "javascript", "sql"],
-                    "rol": "admin"
-                },
-                {
-                    "id": 3,
-                    "email": "profesor@adsacademy.com",
-                    "password": "prof123",
-                    "nombre": "Profesor",
-                    "cursos": ["logica", "javascript", "sql"],
-                    "rol": "profesor"
-                }
-            ]
-        };
-    </script>
-    
+    <!-- Datos de usuarios embebidos (modo estático) -->
+    <script src="data/usuarios.data.js"></script>
     <!-- Script personalizado -->
     <script src="js/login.js"></script>
 </body>

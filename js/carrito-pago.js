@@ -47,8 +47,8 @@ class CarritoPago {
                 <div class="item-details flex-grow-1">
                     <h6 class="mb-1">${item.title}</h6>
                     <div class="d-flex justify-content-between">
-                        <span class="text-muted">Cantidad: ${item.quantity}</span>
-                        <span>${item.price}</span>
+                        <span class="text-muted">Cantidad: ${item.quantity || 1}</span>
+                        <span>${item.price || ('$' + (item.priceCents || 0).toLocaleString('es-CO') + ' COP')}</span>
                     </div>
                 </div>
             `;
@@ -64,9 +64,9 @@ class CarritoPago {
         const totalElement = document.getElementById('total');
 
         if (subtotalElement && taxesElement && totalElement) {
-            subtotalElement.textContent = `$${data.subtotal.toLocaleString('es-CO')} COP`;
+            subtotalElement.textContent = `$${(data.subtotal || 0).toLocaleString('es-CO')} COP`;
             taxesElement.textContent = `$${data.taxes.toLocaleString('es-CO')} COP`;
-            totalElement.textContent = `$${data.total.toLocaleString('es-CO')} COP`;
+            totalElement.textContent = `$${(data.total || 0).toLocaleString('es-CO')} COP`;
             console.log('Resumen actualizado correctamente');
         } else {
             console.error('No se encontraron elementos para actualizar el resumen');

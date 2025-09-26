@@ -32,10 +32,10 @@
                         <a class="nav-link" href="cursos.html"><i class="fas fa-book me-1"></i> Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://harrissonhz.github.io/ADS-Store/"><i class="fas fa-store me-1"></i> Tienda</a>
+                        <a class="nav-link" href="https://harrissonhz.github.io/ADS-Store/" target="_blank" rel="noopener noreferrer"><i class="fas fa-store me-1"></i> Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://www.youtube.com/@AcademyADSHarrissonZapata" class="nav-link px-2" target="_blank" title="YouTube"><i class="fab fa-youtube fa-lg text-white"></i> Canal de YouTube</a>
+                        <a href="https://www.youtube.com/@AcademyADSHarrissonZapata" class="nav-link px-2" target="_blank" title="YouTube"><i class="fab fa-youtube fa-lg text-white"></i> Youtube</a>
                     </li>
                 </ul>
                 <div class="user-profile">
@@ -107,46 +107,8 @@
     <!-- Cursos Destacados -->
     <section class="container mb-5">
         <h2 class="text-center mb-4">Cursos Destacados</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/LogicaProgramacion.jpg" class="card-img-top" alt="Curso 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Lógica de Programación</h5>
-                        <p class="card-text">Aprende a resolver problemas mediante el pensamiento lógico y estructuras básicas para iniciar tu camino en el desarrollo de software.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge bg-primary">Popular</span>
-                            <a href="login.html?redirect=curso-logica.html" class="btn btn-outline-primary">Iniciar Curso</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/JavaScript.jpg" class="card-img-top" alt="Curso 2">
-                    <div class="card-body">
-                        <h5 class="card-title">JavaScript desde Cero</h5>
-                        <p class="card-text">Domina JavaScript, donde aprenderás a crear páginas web interactivas usando el lenguaje más popular para el desarrollo frontend del mundo.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge bg-success">Popular</span>
-                            <a href="login.html?redirect=curso-javascript.html&curso=javascript" class="btn btn-outline-primary">Iniciar Curso</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/SQL.jpg" class="card-img-top" alt="Curso 3">
-                    <div class="card-body">
-                        <h5 class="card-title">SQL de Cero a Experto</h5>
-                        <p class="card-text">Aprende SQL desde cero, domina conceptos básicos hasta consultas avanzadas para gestionar bases de datos de forma eficiente y profesional.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="badge bg-warning">Nuevo</span>
-                            <a href="login.html?curso=sql" class="btn btn-outline-primary">Iniciar Curso</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="featured-grid" class="row g-4">
+            <!-- Render dinámico -->
         </div>
     </section>
 
@@ -161,15 +123,15 @@
                 <div class="col-md-4">
                     <h5>Enlaces Rápidos</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
-                        <li><a href="#" class="text-white">Contacto</a></li>
-                        <li><a href="#" class="text-white">Política de Privacidad</a></li>
+                        <li><a href="sobre-nosotros.html" class="text-white">Sobre Nosotros</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                        <li><a href="politica-privacidad.html" class="text-white">Política de Privacidad</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5>Contacto</h5>
                     <ul class="list-unstyled">
-                        <li><i class="fas fa-envelope me-2"></i>info@adsacademy.com</li>
+                        <li><i class="fas fa-envelope me-2"></i>harrissonzapatagomez@gmail.com</li>
                         <li><i class="fas fa-phone me-2"></i>+57 305 248 7883</li>
                         <li><i class="fas fa-map-marker-alt me-2"></i>Medellín, Colombia</li>
                     </ul>
@@ -180,6 +142,10 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Datos embebidos -->
+    <script src="data/cursos.data.js"></script>
+    <!-- Render de destacados -->
+    <script src="js/index-featured.js"></script>
 
     <!-- WhatsApp Flotante -->
     <a href="https://wa.me/573052487883?text=Hola%20ADS%20estoy%20interesado%20en%20los%20cursos%20virtuales" class="whatsapp-float" target="_blank">

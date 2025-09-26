@@ -9,21 +9,30 @@ class ShoppingCart {
 
     // Vincular eventos
     bindEvents() {
-        // Evento para agregar al carrito
-        document.querySelectorAll('.btn-primary').forEach(button => {
-            if (button.textContent.trim() === 'Agregar al Carrito') {
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const card = button.closest('.card');
-                    const course = {
-                        id: this.generateId(),
-                        title: card.querySelector('.card-title').textContent,
-                        price: card.querySelector('.fw-bold').textContent,
-                        image: card.querySelector('.card-img-top').src
-                    };
-                    this.addItem(course);
-                });
-            }
+        // Delegación para botones de "Agregar al Carrito"
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+            const isAddToCart = (btn.getAttribute('data-action') === 'add-to-cart') || (btn.textContent && btn.textContent.trim() === 'Agregar al Carrito');
+            if (!isAddToCart) return;
+            const card = btn.closest('.card');
+            if (!card) return;
+            e.preventDefault();
+            const titleEl = card.querySelector('.card-title');
+            const priceEl = card.querySelector('.fw-bold');
+            const imgEl = card.querySelector('.card-img-top');
+            const container = btn.closest('[data-codigo]');
+            const stableId = container ? (container.getAttribute('data-codigo') || '').trim() : '';
+            const priceText = priceEl ? priceEl.textContent : '$50.000 COP';
+            const priceCents = this.parsePesosToUnits(priceText);
+            const course = {
+                id: stableId || (titleEl ? titleEl.textContent.trim() : this.generateId()),
+                title: titleEl ? titleEl.textContent.trim() : 'Curso',
+                price: this.formatPesos(priceCents),
+                priceCents: priceCents,
+                image: imgEl ? imgEl.src : ''
+            };
+            this.addItem(course);
         });
 
         // Evento para el botón de checkout
@@ -48,17 +57,29 @@ class ShoppingCart {
 
     // Agregar item al carrito
     addItem(course) {
-        const existingItem = this.items.find(item => item.title === course.title);
-        
+        // Normalizar entrada
+        const priceCents = typeof course.priceCents === 'number' ? course.priceCents : this.parsePesosToUnits(course.price || '$50.000 COP');
+        const normalized = {
+            id: course.id || this.generateId(),
+            title: course.title || 'Curso',
+            price: course.price || this.formatPesos(priceCents),
+            priceCents: priceCents,
+            image: course.image || '',
+            quantity: typeof course.quantity === 'number' ? course.quantity : 1
+        };
+        const existingItem = this.items.find(item => (item.id && normalized.id && item.id === normalized.id) || item.title === normalized.title);
         if (!existingItem) {
-            this.items.push({
-                ...course,
-                quantity: 1
-            });
+            this.items.push(normalized);
             this.updateCart();
             this.showNotification('Curso agregado al carrito');
         } else {
-            existingItem.quantity += 1;
+            existingItem.quantity = (existingItem.quantity || 1) + (normalized.quantity || 1);
+            // Mantener imagen y precio actualizados si llegan nuevos
+            if (normalized.image) existingItem.image = normalized.image;
+            if (typeof normalized.priceCents === 'number') {
+                existingItem.priceCents = normalized.priceCents;
+                existingItem.price = this.formatPesos(normalized.priceCents);
+            }
             this.updateCart();
             this.showNotification('Cantidad actualizada en el carrito');
         }
@@ -146,12 +167,13 @@ class ShoppingCart {
     // Actualizar total
     updateTotal() {
         this.total = this.items.reduce((sum, item) => {
-            const price = parseInt(item.price.replace(/[^0-9]/g, ''));
+            const unit = (typeof item.priceCents === 'number') ? item.priceCents : this.parsePesosToUnits(item.price);
             const quantity = item.quantity || 1;
-            return sum + (price * quantity);
+            return sum + (unit * quantity);
         }, 0);
-        
-        document.getElementById('cartTotal').textContent = `$${this.total.toLocaleString('es-CO')} COP`;
+        const totalText = this.formatPesos(this.total);
+        const totalEl = document.getElementById('cartTotal');
+        if (totalEl) totalEl.textContent = totalText;
     }
 
     // Guardar carrito en localStorage
@@ -200,7 +222,8 @@ class ShoppingCart {
             items: this.items.map(item => ({
                 id: item.id,
                 title: item.title,
-                price: item.price,
+                price: this.formatPesos(typeof item.priceCents === 'number' ? item.priceCents : this.parsePesosToUnits(item.price)),
+                priceCents: typeof item.priceCents === 'number' ? item.priceCents : this.parsePesosToUnits(item.price),
                 quantity: item.quantity || 1,
                 image: item.image
             })),
@@ -217,6 +240,19 @@ class ShoppingCart {
 
         // Redirigir a la página de pago del carrito
         window.location.href = 'carrito-pago.html';
+    }
+
+    // Formatear $x COP
+    formatPesos(units) {
+        const val = Math.max(0, parseInt(units || 0, 10));
+        return `$${val.toLocaleString('es-CO')} COP`;
+    }
+
+    // Parsear "$50.000 COP" -> 50000
+    parsePesosToUnits(text) {
+        if (typeof text === 'number') return Math.max(0, Math.floor(text));
+        const digits = String(text || '').replace(/[^0-9]/g, '');
+        return digits ? parseInt(digits, 10) : 0;
     }
 }
 

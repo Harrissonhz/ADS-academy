@@ -1,28 +1,5 @@
 {
-  "usuarios": [
-    {
-      "id": 1,
-      "email": "estudiantecensa@gmail.com",
-      "password": "123456",
-      "nombre": "Estudiante Censa",
-      "cursos": ["logica", "javascript", "sql"],
-      "rol": "estudiante"
-    },
-    {
-      "id": 2,
-      "email": "admin@adsacademy.com",
-      "password": "admin123",
-      "nombre": "Administrador",
-      "cursos": ["logica", "javascript", "sql"],
-      "rol": "admin"
-    },
-    {
-      "id": 3,
-      "email": "profesor@adsacademy.com",
-      "password": "prof123",
-      "nombre": "Profesor",
-      "cursos": ["logica", "javascript", "sql"],
-      "rol": "profesor"
-    }
-  ]
+  "usuarios": []
 }
+
+
